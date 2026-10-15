@@ -1,0 +1,125 @@
+{
+    "name": "vipertecpro/wysiwyg-editor",
+    "version": "0.9.0",
+    "description": "A fully native, hand-written WYSIWYG rich text editor for NativePHP Mobile — a full-screen editor with a formatting toolbar above the keyboard (bold, italic, headings, lists, links, colors…), returning clean HTML via an event. No webview, no third-party libraries. Fork with inline image support.",
+    "namespace": "WysiwygEditor",
+    "keywords": [
+        "wysiwyg",
+        "editor",
+        "rich-text",
+        "html",
+        "text",
+        "notes"
+    ],
+    "category": "utilities",
+    "license": "MIT",
+    "pricing": {
+        "type": "free"
+    },
+    "author": {
+        "name": "vipertecpro",
+        "email": "vipertecpro@gmail.com",
+        "url": "https://github.com/vipertecpro"
+    },
+    "homepage": "https://github.com/vipertecpro/wysiwyg-editor",
+    "repository": "https://github.com/vipertecpro/wysiwyg-editor",
+    "funding": [],
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "icon": "resources/icon.png",
+    "screenshots": [],
+    "bridge_functions": [
+        {
+            "name": "WysiwygEditor.Open",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.Open",
+            "ios": "WysiwygEditorFunctions.Open",
+            "description": "Open the full-screen native rich text editor and return the edited HTML via an event"
+        },
+        {
+            "name": "WysiwygEditor.InsertMedia",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.InsertMedia",
+            "ios": "WysiwygEditorFunctions.InsertMedia",
+            "description": "Insert a media block at the caret in the open editor"
+        },
+        {
+            "name": "WysiwygEditor.UpdateUpload",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.UpdateUpload",
+            "ios": "WysiwygEditorFunctions.UpdateUpload",
+            "description": "Report upload progress / completion / failure for an inserted media block"
+        },
+        {
+            "name": "WysiwygEditor.Preview",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.Preview",
+            "ios": "WysiwygEditorFunctions.Preview",
+            "description": "Show a media block full-screen — an image viewer, or a video player"
+        },
+        {
+            "name": "WysiwygEditor.SetAccessory",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.SetAccessory",
+            "ios": "WysiwygEditorFunctions.SetAccessory",
+            "description": "Update a host accessory row in the open editor — its label, value or icon"
+        },
+        {
+            "name": "WysiwygEditor.Suggestions",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.Suggestions",
+            "ios": "WysiwygEditorFunctions.Suggestions",
+            "description": "Answer a SuggestionRequested with the people or tags the host found"
+        },
+        {
+            "name": "WysiwygEditor.RunTool",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.RunTool",
+            "ios": "WysiwygEditorFunctions.RunTool",
+            "description": "Ask the open editor to run one of its own tools, for a host sheet that replaces the toolbar"
+        },
+        {
+            "name": "WysiwygEditor.InsertText",
+            "android": "com.vipertecpro.plugins.wysiwyg_editor.WysiwygEditorFunctions.InsertText",
+            "ios": "WysiwygEditorFunctions.InsertText",
+            "description": "Write text at the caret, for a host command the editor does not own"
+        }
+    ],
+    "android": {
+        "min_version": 26,
+        "permissions": [],
+        "repositories": [],
+        "dependencies": {
+            "implementation": []
+        },
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "ios": {
+        "min_version": "15.0",
+        "permissions": [],
+        "repositories": [],
+        "dependencies": {
+            "swift_packages": [],
+            "pods": []
+        }
+    },
+    "assets": {
+        "android": [],
+        "ios": []
+    },
+    "secrets": [],
+    "events": [
+        "Vipertecpro\\WysiwygEditor\\Events\\ContentSaved",
+        "Vipertecpro\\WysiwygEditor\\Events\\EditCancelled",
+        "Vipertecpro\\WysiwygEditor\\Events\\MediaRequested",
+        "Vipertecpro\\WysiwygEditor\\Events\\ContentChanged",
+        "Vipertecpro\\WysiwygEditor\\Events\\MediaEditRequested",
+        "Vipertecpro\\WysiwygEditor\\Events\\AccessoryTapped",
+        "Vipertecpro\\WysiwygEditor\\Events\\DraftRequested",
+        "Vipertecpro\\WysiwygEditor\\Events\\ToolTapped",
+        "Vipertecpro\\WysiwygEditor\\Events\\SuggestionRequested",
+        "Vipertecpro\\WysiwygEditor\\Events\\SheetOptionPicked"
+    ],
+    "service_provider": "Vipertecpro\\WysiwygEditor\\WysiwygEditorServiceProvider",
+    "hooks": {
+        "copy_assets": "nativephp:wysiwyg-editor:copy-assets"
+    }
+}
